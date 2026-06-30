@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nexus Tunnel Pro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background-color: #f6f8fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff; 
+      border-radius: 3px;
+      padding: 16px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #d8dee4;
+      padding-bottom: 8px;
+      color: #24292f;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 400px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    th {
+      color: #57606a;
+      font-weight: 600;
+      border-bottom: 1px solid #d8dee4;
+    }
+    td {
+      border-top: 1px solid #d8dee4;
+      color: #24292f;
+    }
+    tr:hover td {
+      background-color: #f6f8fa;
+    }
+    .name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .name img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+    .name a {
+      color: #0969da;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .name a:hover {
+      text-decoration: underline;
+    }
+    .date, .size {
+      color: #57606a;
+      font-size: 13px;
+    }
+    .test-account {
+      background: #fff3cd;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      th, td {
+        font-size: 13px;
+        padding: 8px;
+      }
+      .name a {
+        font-weight: 500;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Nexus Tunnel Pro</h2>
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>File / Account</th>
+          <th>Last Modified</th>
+          <th>Size</th>
+        </tr> 
+        <tr class="test-account">
+          <td class="name">
+            <img src="https://img.icons8.com/color/48/000000/key.png" alt="account">
+            Test Account → Username: <strong>test</strong>, Password: <strong>1</strong>
+          </td>
+          <td class="date">Always Available</td>
+          <td class="size">-</td>
+        </tr> 
+        <tr>
+          <td class="name">
+            <img src="https://img.icons8.com/color/48/000000/file.png" alt="file">
+            <a href="client-tcp-1194.ovpn">client-tcp-1194.ovpn</a>
+          </td>
+          <td class="date">2025-09-10 22:00</td>
+          <td class="size">3.2 KB</td>
+        </tr>
+        <tr>
+          <td class="name">
+            <img src="https://img.icons8.com/color/48/000000/file.png" alt="file">
+            <a href="client-tcp-ssl.ovpn">client-tcp-ssl.ovpn</a>
+          </td>
+          <td class="date">2025-09-10 22:01</td>
+          <td class="size">3.5 KB</td>
+        </tr>
+        <tr>
+          <td class="name">
+            <img src="https://img.icons8.com/color/48/000000/file.png" alt="file">
+            <a href="client-udp-2200.ovpn">client-udp-2200.ovpn</a>
+          </td>
+          <td class="date">2025-09-10 22:02</td>
+          <td class="size">2.8 KB</td>
+        </tr>
+        <tr>
+          <td class="name">
+            <img src="https://img.icons8.com/color/48/000000/file.png" alt="file">
+            <a href="client-ohp.ovpn">client-ohp.ovpn</a>
+          </td>
+          <td class="date">2025-09-10 22:03</td>
+          <td class="size">3.0 KB</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

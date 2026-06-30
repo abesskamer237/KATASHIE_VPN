@@ -1,0 +1,11 @@
+{
+  "bot_token": "VOTRE_TOKEN_TELEGRAM",
+  "admin_ids": [123456789],
+  "reseller_ids": [987654321, 112233445],
+  "server_host": "127.0.0.1",
+  "server_port": 22,
+  "ssh_user": "root",
+  "ssh_password": "motdepasse",
+  "xray_config": "/usr/local/etc/xray/config.json",
+  "zivpn_config": "/etc/zivpn/config.json"
+}

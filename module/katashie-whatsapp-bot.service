@@ -1,0 +1,16 @@
+[Unit]
+Description=KATASHIE VPN — WhatsApp Manager Bot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/katashie_whatsapp_bot
+ExecStart=/usr/bin/python3 /etc/katashie_whatsapp_bot/whatsapp_bot.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

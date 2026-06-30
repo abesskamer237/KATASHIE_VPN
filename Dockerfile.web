@@ -1,0 +1,22 @@
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY nexus-web/package.json nexus-web/tsconfig.json ./
+RUN npm install
+COPY nexus-web/server ./server
+RUN npm run build:server || npx esbuild server/index.ts --bundle --platform=node --outfile=dist/server.cjs --format=cjs --external:better-sqlite3
+
+FROM node:20-alpine AS frontend-builder
+WORKDIR /app
+COPY nexus-web/frontend/package.json nexus-web/frontend/tsconfig.json nexus-web/frontend/vite.config.ts nexus-web/frontend/tailwind.config.ts ./
+RUN npm install
+COPY nexus-web/frontend/src ./src
+RUN npm run build || true
+
+FROM node:20-alpine
+WORKDIR /app
+RUN apk add --no-cache sqlite curl
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=frontend-builder /app/dist ./public
+EXPOSE 2087
+CMD ["node", "dist/server.cjs"]

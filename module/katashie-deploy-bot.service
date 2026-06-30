@@ -1,0 +1,15 @@
+[Unit]
+Description=KATASHIE VPN — Deploy Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/katashie_deploy_bot
+ExecStart=/usr/bin/python3 /etc/katashie_deploy_bot/deploy_bot.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

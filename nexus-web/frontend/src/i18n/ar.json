@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "accounts": "الحسابات",
+    "resellers": "الموزعون",
+    "admins": "المديرون",
+    "servers": "الخوادم",
+    "monitoring": "المراقبة",
+    "protocols": "البروتوكولات",
+    "settings": "الإعدادات",
+    "audit": "سجل المراجعة",
+    "payment": "المدفوعات",
+    "logout": "تسجيل الخروج"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "signin": "دخول",
+    "error": "بيانات اعتماد غير صالحة"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "total_accounts": "إجمالي الحسابات",
+    "active": "نشط",
+    "suspended": "موقوف",
+    "expiring_soon": "تنتهي قريباً",
+    "bandwidth": "عرض النطاق",
+    "by_protocol": "حسب البروتوكول"
+  },
+  "accounts": {
+    "create": "إنشاء حساب",
+    "username": "اسم المستخدم",
+    "protocol": "البروتوكول",
+    "expires": "ينتهي في",
+    "status": "الحالة",
+    "actions": "الإجراءات",
+    "delete": "حذف",
+    "renew": "تجديد",
+    "qrcode": "رمز QR",
+    "export_csv": "تصدير CSV"
+  },
+  "monitoring": {
+    "title": "المراقبة في الوقت الفعلي",
+    "cpu": "المعالج",
+    "memory": "الذاكرة",
+    "disk": "القرص",
+    "network": "الشبكة",
+    "uptime": "وقت التشغيل",
+    "connections": "اتصالات SSH"
+  },
+  "servers": {
+    "title": "إدارة الخوادم المتعددة",
+    "add": "إضافة خادم",
+    "name": "الاسم",
+    "host": "المضيف",
+    "port": "منفذ SSH",
+    "location": "الموقع",
+    "status": "الحالة",
+    "online": "متصل",
+    "offline": "غير متصل"
+  },
+  "payment": {
+    "title": "مدفوعات موبايل موني",
+    "phone": "رقم الهاتف",
+    "amount": "المبلغ (XAF)",
+    "plan": "الخطة",
+    "pay_now": "ادفع الآن",
+    "check_status": "تحقق من الدفع",
+    "pending": "في الانتظار",
+    "successful": "ناجح",
+    "failed": "فشل"
+  },
+  "theme": {
+    "dark": "الوضع الداكن",
+    "light": "الوضع الفاتح"
+  },
+  "common": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "loading": "جار التحميل...",
+    "error": "خطأ",
+    "success": "نجاح",
+    "search": "بحث"
+  }
+}

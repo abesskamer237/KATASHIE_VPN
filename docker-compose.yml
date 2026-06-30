@@ -1,0 +1,111 @@
+version: '3.9'
+
+services:
+  # ─── Panneau Web KATASHIE VPN ────────────────────────────────────────────────
+  katashie-web:
+    build:
+      context: ./nexus-web
+      dockerfile: ../Dockerfile.web
+    container_name: katashie-web
+    restart: unless-stopped
+    ports:
+      - "2087:2087"
+    volumes:
+      - katashie-db:/etc/katashie-tunnel-web
+      - katashie-backups:/tmp/katashie_backups
+    environment:
+      - KATASHIE_CONFIG=/etc/katashie-tunnel-web/config.json
+      - NEXUS_ADMIN_USER=${ADMIN_USER:-admin}
+      - NEXUS_ADMIN_PASS=${ADMIN_PASS:-admin123}
+      - NEXUS_JWT_SECRET=${JWT_SECRET:-changeme_jwt_secret}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_ADMIN_CHAT=${TELEGRAM_ADMIN_CHAT:-}
+      - CAMPAY_APP_USERNAME=${CAMPAY_APP_USERNAME:-}
+      - CAMPAY_APP_PASSWORD=${CAMPAY_APP_PASSWORD:-}
+      - BACKUP_S3_BUCKET=${BACKUP_S3_BUCKET:-}
+      - BACKUP_S3_ACCESS_KEY=${BACKUP_S3_ACCESS_KEY:-}
+      - BACKUP_S3_SECRET_KEY=${BACKUP_S3_SECRET_KEY:-}
+    networks:
+      - katashie-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:2087/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  # ─── Bot Telegram Principal ──────────────────────────────────────────────────
+  katashie-core-bot:
+    build:
+      context: ./katashie_core_bot
+      dockerfile: ../Dockerfile.bot
+    container_name: katashie-core-bot
+    restart: unless-stopped
+    volumes:
+      - /etc/katashie_bot:/etc/katashie_bot:ro
+      - /etc/xray:/etc/xray
+      - /usr/local/etc/xray:/usr/local/etc/xray
+    environment:
+      - KATASHIE_BOT_CONFIG=/etc/katashie_bot/config.json
+    networks:
+      - katashie-net
+    depends_on:
+      - katashie-web
+
+  # ─── Bot Deploy Multi-VPS ────────────────────────────────────────────────────
+  katashie-deploy-bot:
+    build:
+      context: ./katashie_deploy_bot
+      dockerfile: ../Dockerfile.bot
+    container_name: katashie-deploy-bot
+    restart: unless-stopped
+    volumes:
+      - /etc/katashie_deploy_bot:/etc/katashie_deploy_bot:ro
+      - ~/.ssh:/root/.ssh:ro
+    environment:
+      - KATASHIE_DEPLOY_CONFIG=/etc/katashie_deploy_bot/config.json
+    networks:
+      - katashie-net
+
+  # ─── Bot WhatsApp ────────────────────────────────────────────────────────────
+  katashie-whatsapp-bot:
+    build:
+      context: ./katashie_whatsapp_bot
+      dockerfile: ../Dockerfile.bot
+    container_name: katashie-whatsapp-bot
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    volumes:
+      - /etc/katashie_whatsapp_bot:/etc/katashie_whatsapp_bot:ro
+    environment:
+      - KATASHIE_WA_CONFIG=/etc/katashie_whatsapp_bot/config.json
+    networks:
+      - katashie-net
+
+  # ─── Nginx Reverse Proxy ─────────────────────────────────────────────────────
+  nginx:
+    image: nginx:alpine
+    container_name: katashie-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - nginx-logs:/var/log/nginx
+    networks:
+      - katashie-net
+    depends_on:
+      - katashie-web
+      - katashie-whatsapp-bot
+
+volumes:
+  katashie-db:
+  katashie-backups:
+  nginx-logs:
+
+networks:
+  katashie-net:
+    driver: bridge

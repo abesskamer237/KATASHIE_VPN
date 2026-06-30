@@ -1,0 +1,17 @@
+[Unit]
+Description=KATASHIE VPN — Web Management Panel
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/katashie-web
+ExecStart=/usr/bin/node /etc/katashie-web/server/index.js
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+Environment=NODE_ENV=production
+Environment=NEXUS_DB_DIR=/etc/katashie-tunnel-web
+
+[Install]
+WantedBy=multi-user.target

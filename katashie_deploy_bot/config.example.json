@@ -1,0 +1,19 @@
+{
+  "bot_token": "VOTRE_TOKEN_TELEGRAM",
+  "admin_ids": [123456789],
+  "install_url": "https://raw.githubusercontent.com/YOUR_GITHUB/KATASHIE-VPN/main/autoinstall.sh",
+  "vps_presets": {
+    "vps-cmr-1": {
+      "host": "10.0.0.1",
+      "port": 22,
+      "user": "root",
+      "password": "motdepasse"
+    },
+    "vps-france": {
+      "host": "185.x.x.x",
+      "port": 22,
+      "user": "root",
+      "ssh_key": "/root/.ssh/id_rsa"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "accounts": "Comptes",
+    "resellers": "Revendeurs",
+    "admins": "Administrateurs",
+    "servers": "Serveurs",
+    "monitoring": "Monitoring",
+    "protocols": "Protocoles",
+    "settings": "Paramètres",
+    "audit": "Journal d'audit",
+    "payment": "Paiements",
+    "logout": "Déconnexion"
+  },
+  "auth": {
+    "login": "Connexion",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "signin": "Se connecter",
+    "error": "Identifiants invalides"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "total_accounts": "Total comptes",
+    "active": "Actifs",
+    "suspended": "Suspendus",
+    "expiring_soon": "Expirent bientôt",
+    "bandwidth": "Bande passante",
+    "by_protocol": "Par protocole"
+  },
+  "accounts": {
+    "create": "Créer un compte",
+    "username": "Nom d'utilisateur",
+    "protocol": "Protocole",
+    "expires": "Expire le",
+    "status": "Statut",
+    "actions": "Actions",
+    "delete": "Supprimer",
+    "renew": "Renouveler",
+    "qrcode": "QR Code",
+    "export_csv": "Exporter CSV"
+  },
+  "monitoring": {
+    "title": "Monitoring temps réel",
+    "cpu": "CPU",
+    "memory": "Mémoire",
+    "disk": "Disque",
+    "network": "Réseau",
+    "uptime": "Uptime",
+    "connections": "Connexions SSH"
+  },
+  "servers": {
+    "title": "Gestion multi-serveurs",
+    "add": "Ajouter un serveur",
+    "name": "Nom",
+    "host": "Hôte",
+    "port": "Port SSH",
+    "location": "Localisation",
+    "status": "Statut",
+    "online": "En ligne",
+    "offline": "Hors ligne"
+  },
+  "payment": {
+    "title": "Paiements Mobile Money",
+    "phone": "Numéro de téléphone",
+    "amount": "Montant (XAF)",
+    "plan": "Plan",
+    "pay_now": "Payer maintenant",
+    "check_status": "Vérifier le paiement",
+    "pending": "En attente",
+    "successful": "Réussi",
+    "failed": "Échoué"
+  },
+  "theme": {
+    "dark": "Mode sombre",
+    "light": "Mode clair"
+  },
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "search": "Rechercher"
+  }
+}

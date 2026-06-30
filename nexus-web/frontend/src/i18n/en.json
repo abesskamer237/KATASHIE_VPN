@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "accounts": "Accounts",
+    "resellers": "Resellers",
+    "admins": "Administrators",
+    "servers": "Servers",
+    "monitoring": "Monitoring",
+    "protocols": "Protocols",
+    "settings": "Settings",
+    "audit": "Audit Log",
+    "payment": "Payments",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": "Login",
+    "username": "Username",
+    "password": "Password",
+    "signin": "Sign In",
+    "error": "Invalid credentials"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "total_accounts": "Total Accounts",
+    "active": "Active",
+    "suspended": "Suspended",
+    "expiring_soon": "Expiring Soon",
+    "bandwidth": "Bandwidth",
+    "by_protocol": "By Protocol"
+  },
+  "accounts": {
+    "create": "Create Account",
+    "username": "Username",
+    "protocol": "Protocol",
+    "expires": "Expires",
+    "status": "Status",
+    "actions": "Actions",
+    "delete": "Delete",
+    "renew": "Renew",
+    "qrcode": "QR Code",
+    "export_csv": "Export CSV"
+  },
+  "monitoring": {
+    "title": "Real-time Monitoring",
+    "cpu": "CPU",
+    "memory": "Memory",
+    "disk": "Disk",
+    "network": "Network",
+    "uptime": "Uptime",
+    "connections": "SSH Connections"
+  },
+  "servers": {
+    "title": "Multi-Server Management",
+    "add": "Add Server",
+    "name": "Name",
+    "host": "Host",
+    "port": "SSH Port",
+    "location": "Location",
+    "status": "Status",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "payment": {
+    "title": "Mobile Money Payments",
+    "phone": "Phone Number",
+    "amount": "Amount (XAF)",
+    "plan": "Plan",
+    "pay_now": "Pay Now",
+    "check_status": "Check Payment",
+    "pending": "Pending",
+    "successful": "Successful",
+    "failed": "Failed"
+  },
+  "theme": {
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "search": "Search"
+  }
+}
