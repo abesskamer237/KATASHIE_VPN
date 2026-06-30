@@ -2,7 +2,7 @@
 # ============================================================
 #   KATASHIE VPN — Auto Installer Bootstrap
 #   Compatible: Ubuntu 22.04 / Debian 11+
-#   Usage: wget -qO- https://raw.githubusercontent.com/YOUR_REPO/katashie-vpn/main/autoinstall.sh | bash
+#   Usage: wget -qO- https://raw.githubusercontent.com/abesskamer237/KATASHIE_VPN/main/autoinstall.sh | bash
 # ============================================================
 
 RED='\033[0;31m'
@@ -50,7 +50,7 @@ echo -e "${WHITE}═════════════════════
 echo ""
 
 # Dépôt central KATASHIE VPN (à mettre à jour avec votre repo)
-SERVER_HOST="https://raw.githubusercontent.com/YOUR_GITHUB/katashie-vpn/main"
+SERVER_HOST="https://raw.githubusercontent.com/abesskamer237/KATASHIE_VPN/main"
 
 log_info "Mise à jour des outils de base..."
 apt-get update -y >/dev/null 2>&1
