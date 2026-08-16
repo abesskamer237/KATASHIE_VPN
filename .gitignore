@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+katashie-web/node_modules/
+katashie-web/dist/
+katashie-web/frontend/node_modules/
+katashie-web/frontend/dist/

@@ -1,0 +1,12 @@
+[Unit]
+Description=SSH Over Websocket
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin/ws-stunnel
+Restart=on-failure
+User=root
+WorkingDirectory=/usr/local/bin
+
+[Install]
+WantedBy=multi-user.target

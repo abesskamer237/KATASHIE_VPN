@@ -1,0 +1,19 @@
+SSH Stunnel TLS         : 8181
+SSH Dropbear           : 447
+
+VMESS TLS              : 80
+VMESS NTLS             : 443
+VMESS CUSTOM TLS       : 2083
+VMESS CUSTOM NTLS      : 2082
+
+VLESS TLS              : 80
+VLESS NTLS             : 443
+VLESS CUSTOM TLS       : 2087
+VLESS CUSTOM NTLS      : 2086
+
+TROJAN TLS             : 80
+TROJAN NTLS            : 443 
+
+SOCKS TLS              : 443
+SOCKS NTLS             : 80 
+ 

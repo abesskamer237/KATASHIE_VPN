@@ -1,0 +1,12 @@
+[Unit]
+Description=WebSocket Dropbear
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin/ws-dropbear
+Restart=on-failure
+User=root
+WorkingDirectory=/usr/local/bin
+
+[Install]
+WantedBy=multi-user.target

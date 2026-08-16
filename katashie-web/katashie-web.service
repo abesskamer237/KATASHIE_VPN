@@ -1,0 +1,20 @@
+[Unit]
+Description=KATASHIE VPN Web Panel
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/katashie-vpn-web
+ExecStart=/usr/bin/node /opt/katashie-vpn-web/dist/server/index.js
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+Environment=KATASHIE_CONFIG=/etc/katashie-vpn-web/config.json
+Environment=KATASHIE_DB_DIR=/etc/katashie-vpn-web
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
